@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="zh-CN" data-theme="light">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <title>Bob Lee</title>
+    <meta name="description" content="Bob Lee · UNSW CS。一台能弹的小琴，和一些我喜欢的东西。" />
+    <meta name="theme-color" content="#f7f5ef" />
+    <meta property="og:title" content="Bob Lee" />
+    <meta property="og:description" content="UNSW CS · 点一下琴键，听听看。" />
+    <link rel="icon" type="image/svg+xml" href="./favicon.svg" />
+    <script>
+      // 先于首次绘制设置主题，避免闪白；默认浅米白，记住用户的选择
+      (function () {
+        var t = "light";
+        try {
+          var s = localStorage.getItem("theme");
+          if (s === "dark" || s === "light") t = s;
+        } catch (e) {}
+        document.documentElement.setAttribute("data-theme", t);
+      })();
+    </script>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>
